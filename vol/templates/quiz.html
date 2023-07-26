@@ -1,0 +1,10 @@
+{{template "header.html"}}
+<div id='cont'>
+<h1 class="title">
+Test your hanzi knowledge
+</h1>
+<p id= "describe">Guess the pinyin and meaning of the following hanzi (汉字) :</p>
+<p id="kanji">{{ .content }}</p>
+<button type="button" autofocus id="retry" onclick = "setmenu('/quiz')">Try another one !</button>
+<p></p>
+{{template "footer.html"}}
