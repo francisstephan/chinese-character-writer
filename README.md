@@ -4,10 +4,8 @@ It is based on a small dictionary, but it is no substitute for a regular charact
 
 The dictionary part is a read-only sqlite3 database.
 
-The server is written in go as a direct example of my  gin-html-tutorial.
+The server is written in go as a direct example of my  gin-html-tutorial (https://github.com/francisstephan/gin-html-tutorial).
 
-The client includes html with some javascript.
-
-I am working on a rust + elm version.
+The browser pages are rendered on the sever side.
 
 Watch live at https://chinese-character-writer.fly.dev/size
