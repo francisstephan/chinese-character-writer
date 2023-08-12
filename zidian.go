@@ -31,8 +31,9 @@ func main() {
 }
 
 func dicsize(c *gin.Context) {
+	len, time := data.Dicsize()
 	c.HTML(http.StatusOK, "index.html", gin.H{
-		"content": "The dictionary contains " + data.Dicsize() + " entries",
+		"content": "The dictionary contains " + len + " entries ; last updated on " + time,
 	})
 }
 

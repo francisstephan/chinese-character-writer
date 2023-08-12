@@ -6,6 +6,7 @@ import (
 	"html/template"
 	"log"
 	"math/rand"
+	"os"
 	"strconv"
 	"strings"
 	"time"
@@ -71,12 +72,14 @@ func printdic(sousdic Dico, py string) string { // prepare browser display of pa
 	return retour + "</table>"
 }
 
-func Dicsize() string { // get dictionary size = number of entries
+func Dicsize() (string, string) { // get dictionary size = number of entries
 	dic := litdic("")
 	if dic != nil {
-		return strconv.Itoa(len(dic))
+		file, _ := os.Stat("vol/zidian.db")
+		time := file.ModTime()
+		return strconv.Itoa(len(dic)), time.String()[0:10]
 	}
-	return "zero"
+	return "zero", "err"
 }
 
 func Listforpy(py string) template.HTML { // cf https://pkg.go.dev/html/template#HTML and https://github.com/gin-gonic/gin/issues/858
