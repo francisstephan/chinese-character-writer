@@ -16,9 +16,9 @@ func main() {
 
 	router.Static("/assets", "./vol/assets")
 	router.LoadHTMLGlob("vol/templates/*.html")
-	router.GET("/", func(c *gin.Context) {
+	router.GET("/", func(c *gin.Context) { // context c : c.Request.RemoteAddr
 		c.HTML(http.StatusOK, "index.html", gin.H{
-			"content": "Select a menu item hereabove to get started",
+			"content": "Select a menu item hereabove to get started on " + c.Request.RemoteAddr,
 		})
 	})
 	router.GET("/size", dicsize)
