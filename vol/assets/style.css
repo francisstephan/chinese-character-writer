@@ -4,7 +4,7 @@ table, tr, td {
 table {
 	border-collapse: collapse;
 	margin-left : 50px;
-	margin-bottom: 10px;
+	margin-top: 20px;
 }
 td{
 	padding-left:4px; padding-right:4px ; text-align:center; font-size: 18px;
@@ -92,4 +92,6 @@ td{
  button.Addzi{
 	 margin: 10px;
  }
-
+ :is(tbody, table) > tr:nth-child(odd) {
+    background: #0001; /* or #fff1 for dark themes */
+}

@@ -45,7 +45,14 @@ function copyTextToClipboard() {
         console.error('Async: Could not copy text: ', err);
     });
     document.getElementById('PYstring').focus();
-  }
+}
+
+function lookup() {
+  var text = document.getElementById("zistring").value ;
+  var url = "https://dictionary.writtenchinese.com/#sk="+text+"&svt=pinyin";
+  window.open(url);
+  // document.getElementById('PYstring').focus();
+}
 
   function reset(){
     var entree = document.getElementById("zistring");
